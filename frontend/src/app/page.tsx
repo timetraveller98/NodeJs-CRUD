@@ -16,7 +16,6 @@ const Home = () => {
       method: 'Delete'
     })
     user = await user.json();
-    alert("User Deleted")
     
   }else{null}}
 
