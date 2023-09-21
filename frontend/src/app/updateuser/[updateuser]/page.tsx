@@ -23,7 +23,7 @@ useEffect(()=>{
  
 },[])
 const pullData = async()=>{
-let singleData =await axios.get(`http://localhost:5000/singleuser/${params.updateuser}`).then((res)=>(res.data)).
+let singleData =await axios.get(`http://localhost:5000/${params.updateuser}`).then((res)=>(res.data)).
     catch((err)=>console.log(err,+'Error Found Fetch API'))
     SetName(singleData.name)
     SetEmail(singleData.email)
@@ -47,7 +47,7 @@ let singleData =await axios.get(`http://localhost:5000/singleuser/${params.updat
     const handleUpdate = async()=>{
         alert('Data Updated Succesfully')
         router.push('/');
-        const pushData = await fetch(`http://localhost:5000/updateuser/${params.updateuser}`,{
+        const pushData = await fetch(`http://localhost:5000/${params.updateuser}`,{
             method:'Put',
             mode: "cors",
             cache: "no-cache",

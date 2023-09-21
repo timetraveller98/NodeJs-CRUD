@@ -29,7 +29,7 @@ const AddUser = () => {
     const handleSubmit = async()=>{
         alert('Data Submitted Succesfully')
         router.push('/');
-        const pushData = await fetch("http://localhost:5000/adduser",{
+        const pushData = await fetch("http://localhost:5000",{
             method:'POST',
             mode: "cors",
             cache: "no-cache",

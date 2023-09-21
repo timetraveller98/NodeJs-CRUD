@@ -8,7 +8,7 @@ const Connect = require('./userSchema')  //Add Schema and model
 
 // Post API
 
-app.post('/adduser',async(req:any,res:any)=>{
+app.post('/',async(req:any,res:any)=>{
 const user = new Connect(req.body);
 const result = await user.save();
 res.send(result);
@@ -31,7 +31,7 @@ app.delete('/:id', async(req:any,res:any)=>{
 
 // Single User Call API
 
- app.get('/singleuser/:id', async(req:any,res:any)=>{
+ app.get('/:id', async(req:any,res:any)=>{
     const result =await Connect.findOne({_id:req.params.id});
     if(result){
         res.send(result);
@@ -42,7 +42,7 @@ app.delete('/:id', async(req:any,res:any)=>{
 
  // Update API
 
- app.put('/updateuser/:id', async(req:any,res:any)=>{
+ app.put('/:id', async(req:any,res:any)=>{
     const result =await Connect.updateOne({_id:req.params.id},{$set:req.body});
     res.send(result)
     })
